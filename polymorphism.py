@@ -1,5 +1,6 @@
 '''Polymorphism is an ability (in OOP) to use a common interface for multiple forms (data types).
-Suppose, we need to color a shape, there are multiple shape options (rectangle, square, circle). However we could use the same method to color any shape. This concept is called Polymorphism.'''
+Suppose, we need to color a shape, there are multiple shape options (rectangle, square, circle).
+ However we could use the same method to color any shape. This concept is called Polymorphism.'''
 
 class Parrot:
     def fly(self):

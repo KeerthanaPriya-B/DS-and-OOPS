@@ -1,4 +1,5 @@
-#Constructor is the special function that is automatically executed when an object of a class is created. In Python, there is a special function called “init” which act as a Constructor.
+#Constructor is the special function that is automatically executed when an object of a class is created.
+# In Python, there is a special function called “init” which act as a Constructor.
 
 class Sample:
     num=0
@@ -11,8 +12,10 @@ S1=Sample(15)
 S2=Sample(35)
 S3=Sample(45)
 
-'''In the above program, class variable num is shared by all three objects of the class Sample. It is initialized to zero and each time an object is created, the num is incremented by 1.
-Since, the variable shared by all objects, change made to num by one object is reflected in other objects as well. Thus the above program produces the output given below.'''
+'''In the above program, class variable num is shared by all three objects of the class Sample.
+ It is initialized to zero and each time an object is created, the num is incremented by 1.
+Since, the variable shared by all objects, change made to num by one object is reflected in other objects as well.
+ Thus the above program produces the output given below.'''
 
 '''Output
 The object value is         =       15

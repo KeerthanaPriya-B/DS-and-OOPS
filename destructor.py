@@ -1,4 +1,5 @@
-#Destructor is also a special method gets executed automatically when an object exit from the scope. It is just opposite to constructor. In Python, __del__( ) method is used as destructor.
+#Destructor is also a special method gets executed automatically when an object exit from the scope.
+# It is just opposite to constructor. In Python, __del__( ) method is used as destructor.
 
 class Sample:
     num=0
