@@ -1,19 +1,14 @@
 # Python program for implementation of Selection
 
-import sys
-A = [64, 25, 12, 22, 11]
+list = list(map(int, input('Enter the list: ').split()))
 
-# Traverse through all array elements
-for i in range(len(A)):	
-	# Find the minimum element in remaining
-	# unsorted array
-	min_idx = i
-	for j in range(i+1, len(A)):
-		if A[min_idx] > A[j]:
-			min_idx = j
-			
-	# Swap the found minimum element with the first element		
-	A[i], A[min_idx] = A[min_idx], A[i]
-print ("Sorted array")
-for i in range(len(A)):
-	print("%d" %A[i]),
+for i in range(len(list)):
+    min_val = min(list[i:])
+    min_ind = list.index(min_val)
+    list[i], list[min_ind] = list[min_ind], list[i]
+
+print(list)
+
+'''output:
+Enter the list: 9 6 23 8 23 67
+[6, 8, 9, 23, 23, 67]'''
