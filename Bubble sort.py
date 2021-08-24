@@ -1,22 +1,14 @@
 # Python program for implementation of Bubble Sort
-def bubbleSort(arr):
-	n = len(arr)
-	for i in range(n-1):
-		for j in range(0, n-i-1):
-			if arr[j] > arr[j + 1] :
-				arr[j], arr[j + 1] = arr[j + 1], arr[j]
-arr = [64, 34, 25, 12, 22, 11, 90]
-bubbleSort(arr)
-print ("Sorted array is:")
-for i in range(len(arr)):
-	print ("% d" % arr[i]),
+def bubbleSort(list):
+    for i in range(len(list)-1, 0, -1):
+        for j in range(i):
+            if list[j] > list[j+1]:
+                list[j], list[j+1] = list[j+1], list[j]
 
-'''output
-Sorted array is:
- 11
- 12
- 22
- 25
- 34
- 64
- 90'''
+list = list(map(int, input('Enter the list: ').split()))
+bubbleSort(list)
+print(list)
+
+'''output:
+Enter the list: 43 67 12 89 23 90 34 7
+[7, 12, 23, 34, 43, 67, 89, 90]'''
