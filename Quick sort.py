@@ -1,31 +1,31 @@
-# divide function
-def partition(arr,low,high):
-   i = ( low-1 )
-   pivot = arr[high] # pivot element
-   for j in range(low , high):
-      # If current element is smaller
-      if arr[j] <= pivot:
-         # increment
-         i = i+1
-         arr[i],arr[j] = arr[j],arr[i]
-   arr[i+1],arr[high] = arr[high],arr[i+1]
-   return ( i+1 )
-# sort
-def quickSort(arr,low,high):
-   if low < high:
-      # index
-      pi = partition(arr,low,high)
-      # sort the partitions
-      quickSort(arr, low, pi-1)
-      quickSort(arr, pi+1, high)
-# main
-arr = [2,5,3,8,6,5,4,7]
-n = len(arr)
-quickSort(arr,0,n-1)
-print ("Sorted array is:")
-for i in range(n):
-   print (arr[i],end=" ")
+def pivot_place(list, first, last):
+    pivot = list[first]
+    left = first+1
+    right = last
+    while True:
+        while left <= right and list[left] <= pivot:
+            left+=1
+        while left <= right and list[right] >= pivot:
+            right-=1
+        if right < left:
+            break
+        else:
+            list[left], list[right] = list[right], list[left]
+    list[first], list[right] = list[right], list[first]
+    return right
 
-'''Output
-Sorted array is
-2 3 4 5 5 6 7 8'''
+def quickSort(list, first, last):
+    if first < last:
+        p = pivot_place(list, first, last)
+        quickSort(list, first, p-1)
+        quickSort(list, p+1, last)
+
+list = list(map(int, input('Enter the list: ').split()))
+n= len(list)
+quickSort(list, 0, n-1)
+print(list)
+
+'''output:
+Enter the list:  2 56 23 78 43 76
+[2, 23, 43, 56, 76, 78]
+'''
