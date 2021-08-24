@@ -1,26 +1,17 @@
 # Python program for implementation of Insertion Sort
-def insertionSort(arr):
-	for i in range(1, len(arr)):
-		key = arr[i]
-		# Move elements of arr[0..i-1], that are
-		# greater than key, to one position ahead
-		# of their current position
-		j = i-1
-		while j >=0 and key < arr[j] :
-				arr[j+1] = arr[j]
-				j -= 1
-		arr[j+1] = key
+def insertionSort(list):
+    for index in range(1, len(list)):
+        current_ele = list[index]
+        pos = index
+        while pos>0 and current_ele < list[pos-1]:
+            list[pos] = list[pos-1]
+            pos = pos-1
+        list[pos] = current_ele
 
-arr = [12, 11, 13, 5, 6]
-insertionSort(arr)
-print ("Sorted array is:")
-for i in range(len(arr)):
-	print ("%d" %arr[i])
+list = list(map(int, input('Enter the list: ').split()))
+insertionSort(list)
+print(list)
 
-'''Output:
-Sorted array is:
-5
-6
-11
-12
-13'''
+'''output:
+Enter the list: 34 56 87 12 98
+[12, 34, 56, 87, 98]'''
