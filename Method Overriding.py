@@ -3,29 +3,14 @@ Method overriding is an example of run time polymorphism. In this, the specific 
  It is used to change the behavior of existing methods and there is a need for at least two classes for method overriding.
  In method overriding, inheritance always required as it is done between parent class(superclass) and child class(child class) methods.'''
 
-class A:
-	def fun1(self):
-		print('feature_1 of class A')
-		
-	def fun2(self):
-		print('feature_2 of class A')
-	
+class penquin:
+    def fly(self):
+        print('can\'t fly')
 
-class B(A):
-	# Modified function that is
-	# already exist in class A
-	def fun1(self):
-		print('Modified feature_1 of class A by class B')
-		
-	def fun3(self):
-		print('feature_3 of class B')
-		
+class birds(penquin):
+    def fly(self):
+        print('can fly but swim')
 
-# Create instance
-obj = B()
-	
-# Call the override function
-obj.fun1()
+ob = birds()
+ob.fly()
 
-'''Output: 
-Modified feature_1 of class A by class B'''
