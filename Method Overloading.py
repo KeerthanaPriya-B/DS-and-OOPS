@@ -3,34 +3,15 @@ Method Overloading is an example of Compile time polymorphism. In this, more tha
  Method overloading is used to add more to the behavior of methods and there is no need of more than one class for method overloading.
 Note: Python does not support method overloading. We may overload the methods but can only use the latest defined method.'''
 
-# Function to take multiple arguments
-def add(datatype, *args):
-	# if datatype is int
-	# initialize answer as 0
-	if datatype =='int':
-		answer = 0
-		
-	# if datatype is str
-	# initialize answer as ''
-	if datatype =='str':
-		answer =''
+class add:
+    def sum(self,a=None,b=None,c=None):
+        if c == None:
+            s = a+b
+            return s
+        else:
+            s = a+b+c
+            return  s
 
-	# Traverse through the arguments
-	for x in args:
+ob = add()
+print(ob.sum(2,10,3))
 
-		# This will do addition if the
-		# arguments are int. Or concatenation
-		# if the arguments are str
-		answer = answer + x
-
-	print(answer)
-
-# Integer
-add('int', 5, 6)
-
-# String
-add('str', 'Hi ', 'Geeks')
-
-'''Output: 
-11
-Hi Geeks'''
