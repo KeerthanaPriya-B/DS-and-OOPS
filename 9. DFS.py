@@ -6,20 +6,15 @@ graph = {
   '4' : ['8'],
   '8' : []
 }
-
-visited = set() # Set to keep track of visited nodes of graph.
-
-def dfs(visited, graph, node):  #function for dfs 
+visited = set()
+def dfs(visited, graph, node):
     if node not in visited:
         print (node)
         visited.add(node)
         for neighbour in graph[node]:
             dfs(visited, graph, neighbour)
 
-# Driver Code
-print("Following is the Depth-First Search")
 dfs(visited, graph, '5')
 
 '''output
-Following is the Depth-First Search
 5 3 2 4 8 7'''
