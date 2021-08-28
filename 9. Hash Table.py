@@ -4,6 +4,7 @@ def insert(hash_table, key, value):
     hash_key = hash(key) % len(hash_table)
     key_exists = False
     bucket = hash_table[hash_key]
+    
     for count, key_value in enumerate(bucket):
         keyy, val = key_value
         if key == keyy:
