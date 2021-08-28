@@ -1,3 +1,5 @@
+#   STANDARD IMPLEMENTATION
+
 hash_table = [[] for _ in range(10)]
 
 def insert(hash_table, key, value):
@@ -21,3 +23,25 @@ insert(hash_table, 20, 'India')
 print(hash_table)
 
 '''output:  [[(10, 'Nepal'), (20, 'India')], [], [], [], [], [(25, 'USA')], [], [], [], []]'''
+-------------------------------------------------------------------------------------------------------------------------------
+
+# SIMPLE IMPLEMENTATION
+
+hash_table = [[] for _ in range(10)]
+
+def hashing_func(key):
+    return  key %len(hash_table)
+
+def insert(hash_table, key, value):
+    hash_key = hashing_func(key)
+    hash_table[hash_key].append(value)
+
+insert(hash_table, 10, 'Nepal')
+insert(hash_table, 25, 'USA')
+insert(hash_table, 20, 'India')
+insert(hash_table, 31, 'Canada')
+
+print(hash_table)
+
+'''OUTPUT:   [['Nepal', 'India'], ['Canada'], [], [], [], ['USA'], [], [], [], []]'''
+
